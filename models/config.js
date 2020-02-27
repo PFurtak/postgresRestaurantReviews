@@ -1,11 +1,9 @@
 const host = 'localhost',
-  database = 'restaurantv2',
-
+  database = 'restaurantv2';
 
 const options = {
   host: host,
-  database: database,
-
+  database: database
 };
 
 const pgp = require('pg-promise')({

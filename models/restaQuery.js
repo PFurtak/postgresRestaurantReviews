@@ -1,28 +1,28 @@
 const db = require('./config');
 
-// adjust for DB variables
+class restaList {
+  constructor(name, address, category) {
+    this.name = name;
+    this.year = address;
+    this.category = category;
+  }
+  static async getAll() {
+    try {
+      const res = await db.any(`SELECT * from restaurantv2;`);
+      console.log(res);
+      return res;
+    } catch (error) {
+      console.error('ERROR: ', error);
+    }
+  }
+  static async getById(id) {
+    try {
+      const res = await db.any(`SELECT * from restaurantv2 WHERE id = ${id};`);
+      return res;
+    } catch (error) {
+      console.error('ERROR: ', error);
+    }
+  }
+}
 
-// class executiveList {
-//     constructor(name, year) {
-//       this.name = name;
-//       this.year = year;
-//     }
-//     static async getAll() {
-//       try {
-//         const res = await db.any(`SELECT * from ceos;`);
-//         return res;
-//       } catch (error) {
-//         console.error('ERROR: ', error);
-//       }
-//     }
-//     static async getById(id) {
-//       try {
-//         const res = await db.any(`SELECT * from ceos WHERE id = ${id};`);
-//         return res;
-//       } catch (error) {
-//         console.error('ERROR: ', error);
-//       }
-//     }
-//   }
-
-//   module.exports = executiveList;
+module.exports = restaList;

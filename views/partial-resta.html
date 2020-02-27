@@ -1,7 +1,8 @@
-<!-- Update vaules to matching on DB 
-    
-    <ul>
-    ${arrayOfData.map(ceo => `
-    <li>${ceo.name}: ${ceo.year}</li>
-    ` ).join('')}
-  </ul> -->
+<ul>
+  ${arrayOfData.map(resta => `
+  <li>
+    Name: ${resta.name}, Loctation: ${resta.address}, Category:
+    ${resta.category}
+  </li>
+  ` ).join('')}
+</ul>
